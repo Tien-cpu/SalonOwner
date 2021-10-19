@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li  class="active ">
-            <a href="#">
+            <a href="service.html">
               <i class="nc-icon nc-diamond"></i>
               <p>Dịch Vụ</p>
             </a>
@@ -65,14 +65,14 @@ Coded by www.creative-tim.com
               <p>Khuyến mãi</p>
             </a>
           </li>
-          <li > 
+          <li>
             <a href="./finish.html">
               <i class="nc-icon nc-check-2"></i>
               <p>Hoàn Thành</p>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="./cancel.html">
               <i class="nc-icon nc-simple-remove"></i>
               <p>Đã Hủy</p>
             </a>
@@ -101,9 +101,7 @@ Coded by www.creative-tim.com
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-      
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
-        
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
@@ -113,7 +111,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Dịch vụ của Salon</a>
+            <a class="navbar-brand" href="javascript:;">Thêm dịch vụ mới</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -166,119 +164,77 @@ Coded by www.creative-tim.com
         </div>
       </nav>
       <!-- End Navbar -->
-      <div class="col-md-12 col-12 text-right">
-        <form action="./createservice.html" class="signin-form"><button type="submit" class="btn btn-primary btn-round" style="margin-top: 95px;">Thêm Dịch vụ mới</button></form>
-      </div>
-      <div class="content2">
+      <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card ">
-              
-              <div class="card-header ">
-                <!-- <p class="card-category">24 Hours performance</p> -->
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Điền thông tin dịch vụ</h5>
               </div>
-              <div class="card-body ">
-                <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar3">
-                    <img src="https://afamilycdn.com/150157425591193600/2021/1/12/8803fde455a30c4527f07539421f217e-1610434334837578849880.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Tên Dịch vụ</label>
+                        <input type="text" class="form-control"
+                        placeholder="Name" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Giá gốc</label>
+                        <input type="number" class="form-control" placeholder="0 vnd">
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-7 col-7"     style="margin-left: 60px;"><br>
-                  Tên: Cắt tóc kiểu Hime <br>
-                  Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
-                  Giá Gốc : 300.000 vnd/người<br>
-                  Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
-                  Khuyến Mãi : 15% <br>
-                  Đã Sử Dụng : 15 người <br>
-                  <form action="./feedback.html" class="signin-form"><button type="submit" class="btn btn-primary btn-round">Xem Dánh Giá</button></form>
-                  
-                </div>
-              </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                  <div class="col-md-12 col-12 text-right">
-                    <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Thông tin mô tả</label>
+                        <textarea class="form-control textarea"></textarea>
+                      </div>
+                    </div>
                   </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="img">Chọn ảnh đại diện của dịch vụ:</label>
+                        <input type="file" id="img" name="img" accept="image/*" class="form-control" placeholder="0 vnd">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="content2">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              
-              <div class="card-header ">
-                <!-- <p class="card-category">24 Hours performance</p> -->
-              </div>
-              <div class="card-body ">
-                <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar3">
-                    <img src="https://image-us.eva.vn/upload/4-2019/images/2019-12-19/nhung-kieu-toc-ngan-dep-2020-duoc-yeu-thich-nhat-kieu-toc-ngan-dep-2-1576746811-607-width508height502.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                  </div>
-                </div>
-                <div class="col-lg-7 col-7"     style="margin-left: 60px;"><br>
-                  Tên: Cắt tóc ngắn nữ <br>
-                  Dịch vụ : Kiểu tóc trẻ trung, xinh xắn<br>
-                  Giá Gốc : 210.000 vnd/người <br>
-                  Đánh Giá : chưa có đánh giá <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
-                  Khuyến Mãi : 5% <br>
-                  Đã Sử Dụng : 0 người <br>
-                  <form action="./feedback.html" class="signin-form"><button type="submit" class="btn btn-primary btn-round">Xem Dánh Giá</button></form>
-                </div>
-              </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                  <div class="col-md-12 col-12 text-right">
-                    <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
-                  </div>
-              </div>
-            </div>
+      <!-- <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
+                <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
+                <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
+              </ul>
+            </nav>
+             <div class="credits ml-auto">
+              <span class="copyright">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </span>
+            </div
           </div>
         </div>
-      </div>
-      <div class="content2">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              
-              <div class="card-header ">
-                <!-- <p class="card-category">24 Hours performance</p> -->
-              </div>
-              <div class="card-body ">
-                <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar3">
-                    <img src="https://image-us.eva.vn/upload/3-2020/images/2020-09-10/15-kieu-toc-tia-layer-dep-tre-trung-duoc-yeu-thich-nhat-nam-2020-toc-tia-layer-2-1599728418-87-width600height414.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                  </div>
-                </div>
-                <div class="col-lg-7 col-7"     style="margin-left: 60px;"><br>
-                  Tên: Cắt tóc Layer <br>
-                  Dịch vụ : Kiểu tóc Layer với nhiều mẫu tóc đẹp<br>
-                  Giá Gốc : 280.000 vnd/người <br>
-                  Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
-                  Khuyến Mãi : 5% <br>
-                  Đã Sử Dụng : 15 người <br>
-                  <form action="./feedback.html" class="signin-form"><button type="submit" class="btn btn-primary btn-round">Xem Dánh Giá</button></form>
-                </div>
-              </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                  <div class="col-md-12 col-12 text-right">
-                    <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      </footer> -->
     </div>
   </div>
   <!--   Core JS Files   -->

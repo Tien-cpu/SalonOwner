@@ -32,6 +32,60 @@ Coded by www.creative-tim.com
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <script type="text/javascript">
+
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkBoxes");
+
+    if (show) {
+        checkboxes.style.display = "block";
+        show = false;
+    } else {
+        checkboxes.style.display = "none";
+        show = true;
+    }
+}
+    </script>
+    <style>
+      h1 {
+          color: green;
+      }
+
+      .multipleSelection {
+          width: 100%;
+          background-color: #BCC2C1;
+      }
+
+      .selectBox {
+          position: relative;
+      }
+
+      .selectBox select {
+          width: 100%;
+          font-weight: bold;
+      }
+
+      .overSelect {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+      }
+
+      #checkBoxes {
+          display: none;
+          border: 1px #8DF5E4 solid;
+      }
+
+      #checkBoxes label {
+          display: block;
+      }
+
+      #checkBoxes label:hover {
+          background-color: #8DF5E4 solid;
+      }
+  </style>
 </head>
 
 <body class="">
@@ -95,12 +149,7 @@ Coded by www.creative-tim.com
               <p>Sign Out</p>
             </a>
           </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
+ 
         </ul>
       </div>
     </div>
@@ -204,33 +253,82 @@ Coded by www.creative-tim.com
                         </select>
                       </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Giờ Huyến mãi</label>
+                        <form>
+                          <div class="multipleSelection">
+                              <div class="selectBox" 
+                                  onclick="showCheckboxes()">
+                                  <select class="form-control" >
+                                  </select>
+                                  <div class="overSelect"></div>
+                              </div>
+                    
+                              <div id="checkBoxes">
+                                  <label for="first">
+                                      <input type="checkbox" id="first" />
+                                      thứ 2
+                                  </label>
+                                    
+                                  <label for="second">
+                                      <input type="checkbox" id="second" />
+                                      thứ 3
+                                  </label>
+                                  <label for="third">
+                                      <input type="checkbox" id="third" />
+                                      thứ 4
+                                  </label>
+                                  <label for="fourth">
+                                      <input type="checkbox" id="fourth" />
+                                      thứ 5
+                                  </label>
+                                  <label for="fourth">
+                                    <input type="checkbox" id="fourth" />
+                                    thứ 6
+                                  </label>
+                                  <label for="fourth">
+                                    <input type="checkbox" id="fourth" />
+                                    thứ 7
+                                  </label>
+                                  <label for="fourth">
+                                    <input type="checkbox" id="fourth" />
+                                    chủ nhật
+                                  </label>
+                              </div>
+                          </div>
+                      </form>
+                      <script>
+                        var show = true;
+                  
+                        function showCheckboxes() {
+                            var checkboxes = 
+                                document.getElementById("checkBoxes");
+                  
+                            if (show) {
+                                checkboxes.style.display = "block";
+                                show = false;
+                            } else {
+                                checkboxes.style.display = "none";
+                                show = true;
+                            }
+                        }
+                    </script>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
                       <div class="form-group">
                         <label>Ngày bắt đầu</label>
                         <input type="datetime-local" class="form-control">
                       </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-3">
                       <div class="form-group">
                         <label>Ngày kết thúc</label>
                         <input type="datetime-local" class="form-control">
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-md-6 pr-1">
-                      <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Chet">
-                      </div>
-                    </div>
-                    <div class="col-md-6 pl-1">
-                      <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Faker">
-                      </div>
-                    </div>
-                  </div> -->
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -245,26 +343,6 @@ Coded by www.creative-tim.com
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-md-4 pr-1">
-                      <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="Melbourne">
-                      </div>
-                    </div>
-                    <div class="col-md-4 px-1">
-                      <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country" value="Australia">
-                      </div>
-                    </div>
-                    <div class="col-md-4 pl-1">
-                      <div class="form-group">
-                        <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code">
-                      </div>
-                    </div>
-                  </div> -->
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">

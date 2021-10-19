@@ -3359,6 +3359,10 @@ License - nucleoapp.com/license/
       padding: 0 30px 30px;
       min-height: calc(10vh - px);
       margin-top: 0px; }
+      .main-panel > .content3 {
+        padding: 0 30px 30px;
+        min-height: calc(10vh - px);
+        margin-top: 20px; }
   .main-panel > .navbar {
     margin-bottom: 0; }
   .main-panel .header {
@@ -3701,6 +3705,12 @@ License - nucleoapp.com/license/
         overflow: hidden;
         border-radius: 5%;
         margin-bottom: 15px; }
+        .card .avatar4 {
+          width: 250px;
+          height: 250px;
+          overflow: hidden;
+          border-radius: 5%;
+          margin-bottom: 15px; }
   .card .numbers {
     font-size: 2em; }
   .card .big-title {
@@ -4240,4 +4250,37 @@ License - nucleoapp.com/license/
     width: 38%;
     padding: 15px; } }
 
+    .multiselect {
+      width: 200px;
+    }
+    
+    .selectBox {
+      position: relative;
+    }
+    
+    .selectBox select {
+      width: 100%;
+      font-weight: bold;
+    }
+    
+    .overSelect {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    
+    #checkboxes {
+      display: none;
+      border: 1px #dadada solid;
+    }
+    
+    #checkboxes label {
+      display: block;
+    }
+    
+    #checkboxes label:hover {
+      background-color: #1e90ff;
+    }
 /*# sourceMappingURL=paper-dashboard.css.map */
