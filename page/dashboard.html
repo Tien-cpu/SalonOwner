@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,8 +18,443 @@ Coded by www.creative-tim.com
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+    
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 400px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width textarea */
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 200px;
+    }
+    
+    /* When the textarea gets focus, do something */
+    .form-container textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/send button */
+    /* .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    } */
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    .stretch-card>.card {
+    width: 100%;
+    min-width: 100%
+}
+
+body {
+    background-color: #f9f9fa
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+@media (max-width:991.98px) {
+    .padding {
+        padding: 1.5rem
+    }
+}
+
+@media (max-width:767.98px) {
+    .padding {
+        padding: 1rem
+    }
+}
+
+.padding {
+    padding: 3rem
+}
+
+.box.box-warning {
+    border-top-color: #f39c12
+}
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #f4f4f4
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #f4f4f4
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative
+}
+
+.box-header:before,
+.box-body:before,
+.box-footer:before,
+.box-header:after,
+.box-body:after,
+.box-footer:after {
+    content: "";
+    display: table
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative
+}
+
+.box-header>.fa,
+.box-header>.glyphicon,
+.box-header>.ion,
+.box-header .box-title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1
+}
+
+.box-header>.box-tools {
+    position: absolute;
+    right: 10px;
+    top: 5px
+}
+
+.box-header>.box-tools [data-toggle="tooltip"] {
+    position: relative
+}
+
+.bg-yellow,
+.callout.callout-warning,
+.alert-warning,
+.label-warning,
+.modal-warning .modal-body {
+    background-color: #f39c12 !important
+}
+
+.bg-yellow {
+    color: #fff !important
+}
+
+.btn {
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid transparent
+}
+
+.btn-box-tool {
+    padding: 5px;
+    font-size: 12px;
+    background: transparent;
+    color: #97a0b3
+}
+
+.direct-chat .box-body {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    position: relative;
+    overflow-x: hidden;
+    padding: 0
+}
+
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px
+}
+
+.box-header:before,
+.box-body:before,
+.box-footer:before,
+.box-header:after,
+.box-body:after,
+.box-footer:after {
+    content: "";
+    display: table
+}
+
+.direct-chat-messages {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    padding: 10px;
+    height: 250px;
+    overflow: auto
+}
+
+.direct-chat-messages,
+.direct-chat-contacts {
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    -moz-transition: -moz-transform .5s ease-in-out;
+    -o-transition: -o-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out
+}
+
+.direct-chat-msg {
+    margin-bottom: 10px
+}
+
+.direct-chat-msg,
+.direct-chat-text {
+    display: block
+}
+
+.direct-chat-info {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px
+}
+
+.direct-chat-timestamp {
+    color: #999
+}
+
+.btn-group-vertical>.btn-group:after,
+.btn-group-vertical>.btn-group:before,
+.btn-toolbar:after,
+.btn-toolbar:before,
+.clearfix:after,
+.clearfix:before,
+.container-fluid:after,
+.container-fluid:before,
+.container:after,
+.container:before,
+.dl-horizontal dd:after,
+.dl-horizontal dd:before,
+.form-horizontal .form-group:after,
+.form-horizontal .form-group:before,
+.modal-footer:after,
+.modal-footer:before,
+.modal-header:after,
+.modal-header:before,
+.nav:after,
+.nav:before,
+.navbar-collapse:after,
+.navbar-collapse:before,
+.navbar-header:after,
+.navbar-header:before,
+.navbar:after,
+.navbar:before,
+.pager:after,
+.pager:before,
+.panel-body:after,
+.panel-body:before,
+.row:after,
+.row:before {
+    display: table;
+    content: ""
+}
+
+.direct-chat-img {
+    border-radius: 50%;
+    float: left;
+    width: 40px;
+    height: 40px
+}
+
+.direct-chat-text {
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 10px;
+    background: #d2d6de;
+    border: 1px solid #d2d6de;
+    margin: 5px 0 0 50px;
+    color: #444
+}
+
+.direct-chat-msg,
+.direct-chat-text {
+    display: block
+}
+
+.direct-chat-text:before {
+    border-width: 6px;
+    margin-top: -6px
+}
+
+.direct-chat-text:after,
+.direct-chat-text:before {
+    position: absolute;
+    right: 100%;
+    top: 15px;
+    border: solid transparent;
+    border-right-color: #d2d6de;
+    content: ' ';
+    height: 0;
+    width: 0;
+    pointer-events: none
+}
+
+.direct-chat-text:after {
+    border-width: 5px;
+    margin-top: -5px
+}
+
+.direct-chat-text:after,
+.direct-chat-text:before {
+    position: absolute;
+    right: 100%;
+    top: 15px;
+    border: solid transparent;
+    border-right-color: #d2d6de;
+    content: ' ';
+    height: 0;
+    width: 0;
+    pointer-events: none
+}
+
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.direct-chat-msg:after {
+    clear: both
+}
+
+.direct-chat-msg:after {
+    content: "";
+    display: table
+}
+
+.direct-chat-info {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px
+}
+
+.right .direct-chat-img {
+    float: right
+}
+
+.direct-chat-warning .right>.direct-chat-text {
+    background: #f39c12;
+    border-color: #f39c12;
+    color: #fff
+}
+
+.right .direct-chat-text {
+    margin-right: 50px;
+    margin-left: 0
+}
+
+.box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px;
+    background-color: #fff
+}
+
+.box-header:before,
+.box-body:before,
+.box-footer:before,
+.box-header:after,
+.box-body:after,
+.box-footer:after {
+    content: "";
+    display: table
+}
+
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap
+}
+
+.input-group-btn:last-child>.btn,
+.input-group-btn:last-child>.btn-group {
+    z-index: 2;
+    margin-left: -1px
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236
+}
+  </style>
   <script>
 
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
     function opentab(evt, tabName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
@@ -47,10 +468,11 @@ Coded by www.creative-tim.com
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+    opentab(event, 'DaDat')
     </script>
 </head>
 
-<body class="">
+<body class="" onload="opentab(event, 'DaDat')" >
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
@@ -66,7 +488,7 @@ Coded by www.creative-tim.com
           <li  class="active ">
             <a href="./dashboard.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
+              <p>Lịch Hẹn</p>
             </a>
           </li>
           <li>
@@ -127,7 +549,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+            <a class="navbar-brand" href="javascript:;">Lịch Hẹn</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -180,9 +602,10 @@ Coded by www.creative-tim.com
         </div>
       </nav>
       <!-- End Navbar -->
-      <div class="col-md-11 col-11" style="margin-top: 95px;" >
-        <i class="fa fa-gift" aria-hidden="true"></i> Dịch vụ của bạn
+      <div class="col-md-11 col-11" style="margin-top: 63px; margin-left: 20px;" >
+        <!-- <h4><i class="fa fa-gift" aria-hidden="true"></i> Dịch vụ của bạn</h4> -->
       </div>
+<!--       
       <div class="content3">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -191,7 +614,77 @@ Coded by www.creative-tim.com
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="col-md-10 col-10 content3" style="margin-left: 8%;" >
+              <div class="container" >
+                <div class="col-md-11 col-11" style="margin-left: 20px;" >
+                  <h4><i class="fa fa-scissors" aria-hidden="true"></i> Dịch vụ cắt tóc</h4>
+                </div>
+                <div class="row" style="display: flex; overflow-x: scroll">
+                  <div class="card" style="float: left;
+                                          width: 30%;
+                                          padding: .75rem;
+                                          margin-left: 3%;
+                                          margin-bottom: 2rem;
+                                          border: 0;" >
+                    <div class="avatar4">
+                            <img src="https://afamilycdn.com/150157425591193600/2021/1/12/8803fde455a30c4527f07539421f217e-1610434334837578849880.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                          </div>
+                          <div class="card-body">
+                            <div class="col-md-12"     style="margin-left: 0px; font-size: 80%;"><br>
+                              Tên: Cắt tóc kiểu Hime <br>
+                              Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
+                              Giá Gốc : 300.000 vnd/người<br>
+                              Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
+                              Khuyến Mãi : 15% <br>
+                              Đã Sử Dụng : 15 người <br>
+                              <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
+                            </div>
+                          </div>
+                  </div>
+                  <div class="card" style="float: left;
+                  width: 30%;
+                  padding: .75rem;
+                  margin-left: 3%;
+                  margin-bottom: 2rem;
+                  border: 0;">
+                    <div class="avatar4">
+                      <img src="https://image-us.eva.vn/upload/3-2020/images/2020-09-10/15-kieu-toc-tia-layer-dep-tre-trung-duoc-yeu-thich-nhat-nam-2020-toc-tia-layer-2-1599728418-87-width600height414.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="card-body">
+                      <div class="col-md-12"     style="margin-left: 0px; font-size: 80%;"><br>
+                        Tên: Cắt tóc kiểu Hime <br>
+                        Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
+                        Giá Gốc : 300.000 vnd/người<br>
+                        Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
+                        Khuyến Mãi : 15% <br>
+                        Đã Sử Dụng : 15 người <br>
+                        <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
+                      </div>
+                    </div>
+                  </div>
+                   <div class="card" style="float: left;
+                   width: 30%;
+                   padding: .75rem;
+                   margin-left: 3%;
+                   margin-bottom: 2rem;
+                   ">
+                    <div class="avatar4 Center">
+                            <img src="https://niceshop.vn/wp-content/uploads/2020/03/cach-cham-soc-toc-duoi-tai-nha.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="card-body">
+                      <div class="col-md-12"     style="margin-left: 0px; font-size: 80%;"><br>
+                        Tên: Cắt tóc kiểu Hime <br>
+                        Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
+                        Giá Gốc : 300.000 vnd/người<br>
+                        Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
+                        Khuyến Mãi : 15% <br>
+                        Đã Sử Dụng : 15 người <br>
+                        <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="col-md-6 content3" style="margin-left: 24%;" >
                 <div class="row">
                   <div class="col-md-12">
                     <div class="card ">
@@ -199,29 +692,99 @@ Coded by www.creative-tim.com
                       </div>
                       <div class="card-body ">
                         <div class="row">
-                        <div class="col-md-4 col-4">
+                        <div class="col-md-4 col-4" style="margin-left: 20px;"">
                           <div class="avatar4">
                             <img src="https://afamilycdn.com/150157425591193600/2021/1/12/8803fde455a30c4527f07539421f217e-1610434334837578849880.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                           </div>
                         </div>
-                        <div class="col-lg-7 col-7"     style="margin-left: 20px;"><br>
+                        <div class="col-lg-5 col-5 Center"     style="margin-left: 80px; font-size: 120%;"><br>
                           Tên: Cắt tóc kiểu Hime <br>
                           Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
                           Giá Gốc : 300.000 vnd/người<br>
                           Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
                           Khuyến Mãi : 15% <br>
                           Đã Sử Dụng : 15 người <br>
-                          <button type="submit" class="btn btn-primary btn-round">Xem Dánh Giá</button>
+                          <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
                         </div>
                       </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="col-md-10 col-10 content3" style="margin-left: 8%;" >
+              </div> -->
+            <!-- </div>
+            <div class="carousel-item" >
+              <div class="container"  >
+                <div class="col-md-11 col-11" style="margin-left: 20px;" >
+                  <h4><i class="fa fa-scissors" aria-hidden="true"></i> Dịch vụ nhuộm tóc</h4>
+                </div>
+                <div class="row" style="display: flex; overflow-x: scroll">
+                  <div class="card" style="float: left;
+                                          width: 30%;
+                                          padding: .75rem;
+                                          margin-left: 3%;
+                                          margin-bottom: 2rem;
+                                          border: 0;" >
+                    <div class="avatar4">
+                            <img src="https://afamilycdn.com/150157425591193600/2021/1/12/8803fde455a30c4527f07539421f217e-1610434334837578849880.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                          </div>
+                          <div class="card-body">
+                            <div class="col-md-12"     style="margin-left: 0px; font-size: 80%;"><br>
+                              Tên: Cắt tóc kiểu Hime <br>
+                              Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
+                              Giá Gốc : 300.000 vnd/người<br>
+                              Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
+                              Khuyến Mãi : 15% <br>
+                              Đã Sử Dụng : 15 người <br>
+                              <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
+                            </div>
+                          </div>
+                  </div>
+                  <div class="card" style="float: left;
+                  width: 30%;
+                  padding: .75rem;
+                  margin-left: 3%;
+                  margin-bottom: 2rem;
+                  border: 0;">
+                    <div class="avatar4">
+                      <img src="https://toplist.vn/images/800px/hair-salon-hieu-trang-576089.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="card-body">
+                      <div class="col-md-12"     style="margin-left: 0px; font-size: 80%;"><br>
+                        Tên: Cắt tóc kiểu Hime <br>
+                        Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
+                        Giá Gốc : 300.000 vnd/người<br>
+                        Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
+                        Khuyến Mãi : 15% <br>
+                        Đã Sử Dụng : 15 người <br>
+                        <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
+                      </div>
+                    </div>
+                  </div>
+                   <div class="card" style="float: left;
+                   width: 30%;
+                   padding: .75rem;
+                   margin-left: 3%;
+                   margin-bottom: 2rem;
+                   border: 0;">
+                    <div class="avatar4">
+                            <img src="https://adayne.vn/wp-content/uploads/2021/04/noi-loan-voi-mau-toc-bach-kim-dep-nhat-nam-2020-cho-co-nang-ca-tinh-1-3.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="card-body">
+                      <div class="col-md-12"     style="margin-left: 0px; font-size: 80%;"><br>
+                        Tên: Cắt tóc kiểu Hime <br>
+                        Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
+                        Giá Gốc : 300.000 vnd/người<br>
+                        Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
+                        Khuyến Mãi : 15% <br>
+                        Đã Sử Dụng : 15 người <br>
+                        <button type="submit" style="margin-left: 50px;" class="btn btn-primary btn-round Center">Xem Dánh Giá</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="col-md-6 content3" style="margin-left: 24%;" >
                 <div class="row">
                   <div class="col-md-12">
                     <div class="card ">
@@ -230,69 +793,59 @@ Coded by www.creative-tim.com
                       </div>
                       <div class="card-body ">
                         <div class="row">
-                        <div class="col-md-4 col-4">
+                        <div class="col-md-4 col-4" style="margin-left: 20px;">
                           <div class="avatar4">
                             <img src="https://image-us.eva.vn/upload/3-2020/images/2020-09-10/15-kieu-toc-tia-layer-dep-tre-trung-duoc-yeu-thich-nhat-nam-2020-toc-tia-layer-2-1599728418-87-width600height414.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                           </div>
                         </div>
-                        <div class="col-lg-7 col-7"     style="margin-left: 20px;"><br>
+                        <div class="col-lg-6 col-md-6" style="margin-left: 80px; font-size: 120%;"><br>
                           Tên: Cắt tóc Layer <br>
                           Dịch vụ : Kiểu tóc Layer với nhiều mẫu tóc đẹp<br>
                           Giá Gốc : 280.000 vnd/người <br>
                           Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
                           Khuyến Mãi : 5% <br>
                           Đã Sử Dụng : 15 người <br>
-                          <button type="submit" class="btn btn-primary btn-round">Xem Dánh Giá</button>
+                          <button type="submit"  style="margin-left: 50px;"  class="btn btn-primary btn-round">Xem Dánh Giá</button>
                         </div>
                       </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" style="font-size:48px; color:#e3b04b;" aria-hidden="true"></i>
+            <i class="fa fa-angle-left" style="font-size:60px; color:#e3b04b;" aria-hidden="true"></i> -->
             <!-- <span class="sr-only">Previous</span> -->
-          </a>
+          <!-- </a>
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <i class="fa fa-angle-right" style="font-size:48px; color:#e3b04b;" aria-hidden="true"></i>
+            <i class="fa fa-angle-right" style="font-size:60px; color:#e3b04b;" aria-hidden="true"></i> -->
             <!-- <span class="sr-only">Next</span> -->
-          </a>
+          <!-- </a>
         </div>
-      </div>
+      </div> -->
       <div class="tab">
         <div class="row">
                     
           <div class="col-md-4 Center">
             <!-- <button type="submit" class="btn btn-primary btn-round tablinks" onclick="openCity(event, 'London')">Đã đặt</button> -->
-            <button class="tablinks" onclick="opentab(event, 'DaDat')">Đã đặt</button>
-          </div>
-          <div class="col-md-4 Center">
-            <button class="tablinks" onclick="opentab(event, 'DaHuy')">Đã hủy</button>
+            <button class="tablinks active" onclick="opentab(event, 'DaDat')">Sắp tới</button>
           </div>
           <div class="col-md-4 Center">
             <button class="tablinks" onclick="opentab(event, 'HoanThanh')">Đã hoàn thành</button>
           </div>
+          <div class="col-md-4 Center">
+            <button class="tablinks" onclick="opentab(event, 'DaHuy')">Đã hủy</button>
+          </div>
         </div>
-        <!-- <button class="tablinks" onclick="openCity(event, 'London')">Đã đặt</button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">Đã hủy</button>
-        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Đã hoàn thành</button> -->
       </div>
-      
-      <!-- Tab content -->
       <div id="DaDat" class="tabcontent">
-        <!-- <div class="col-md-11 col-11" style="margin-top: 25px;" >
-          <i class="fa fa-calendar" aria-hidden="true"></i> Lịch đã được đặt
-        </div> -->
         <div class="content3">
           <div class="row">
             <div class="col-md-10" style="margin-left: 8%;" >
               <div class="card ">
-                
                 <div class="card-header ">
-                  <!-- <p class="card-category">24 Hours performance</p> -->
                 </div>
                 <div class="card-body ">
                   <div class="row">
@@ -305,10 +858,16 @@ Coded by www.creative-tim.com
                     Nguyễn Thị B <br>
                     Dịch vụ : Kiểu tóc Layer với nhiều mẫu tóc đẹp <br>
                     Thời Gian : 17/10/2021 13:30 <br>
-                    Trạng thái : <span class="text-success">Chờ sử dụng dịch vụ</span> <br>
+                    Trạng thái : <span class="text-success">Đã đặt lịch</span> <br>
                     Giá Dịch Vụ : 280.000 vnd<br>
                     khuyến mãi sử dụng : 15% <br>
                     Thanh Toán : 238.000 vnd
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    
+                    <form action="./message.html" class="signin-form">
+                      <btn class="btn btn-sm btn-outline-success btn-round btn-icon" onclick="openForm()" >
+                        <i class="fa fa-envelope"></i></btn></form>
                   </div>
                 </div>
                 </div>
@@ -329,25 +888,27 @@ Coded by www.creative-tim.com
           <div class="row">
             <div class="col-md-10" style="margin-left: 8%;">
               <div class="card ">
-                
                 <div class="card-header ">
-                  <!-- <p class="card-category">24 Hours performance</p> -->
                 </div>
                 <div class="card-body ">
                   <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar2">
-                      <img src="https://ephoto360.com/uploads/worigin/2020/03/23/tao-avatar-mac-dinh-facebook-thay-nen-cuc-hot5e7838ae39057_96eb8aef68a3aa00523448390b49fbcb.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="http://thuvienhinhanh.net/wp-content/uploads/2016/05/anh-avatar-dep-den-chat-cap-cho-facebook-tuong-doc-dao-nhat14.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-lg-7 col-7">
                     Nguyễn Văn A <br>
                     Dịch vụ : Cắt tóc Layer <br>
                     Thời Gian : 17/10/2021 13:30 <br>
-                    Trạng thái : <span class="text-success">Chờ sử dụng dịch vụ</span> <br>
+                    Trạng thái : <span class="text-success">Đã đặt lịch</span> <br>
                     Giá Dịch Vụ : 280.000 vnd<br>
                     khuyến mãi sử dụng : 15% <br>
-                    Thanh Toán : 238.000 vnd
+                    Thanh Toán : 238.000 vnd <br>
+                    
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
                   </div>
                 </div>
                 </div>
@@ -365,15 +926,12 @@ Coded by www.creative-tim.com
           </div>
         </div>
       </div>
-      
       <div id="DaHuy" class="tabcontent">
         <div class="content">
           <div class="row">
             <div class="col-md-10" style="margin-left: 8%;">
               <div class="card ">
-                
                 <div class="card-header ">
-                  <!-- <p class="card-category">24 Hours performance</p> -->
                 </div>
                 <div class="card-body ">
                   <div class="row">
@@ -529,6 +1087,43 @@ Coded by www.creative-tim.com
           </div>
         </div>
       </div>-->
+      <footer>
+        <div class="chat-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <div class="box box-warning direct-chat direct-chat-warning">
+              <div class="box-header with-border">
+                  <h3 class="box-title">Chat Messages</h3>
+                  <div class="box-tools pull-right"> <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages"></span> <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i> </button> <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts"> <i class="fa fa-comments"></i></button> <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i> </button> </div>
+              </div>
+              <div class="box-body">
+                  <div class="direct-chat-messages">
+                      <div class="direct-chat-msg">
+                          <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-left">Nguyễn Thị B</span> <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span> </div> <img class="direct-chat-img" src="https://ephoto360.com/uploads/worigin/2020/03/23/tao-avatar-mac-dinh-facebook-thay-nen-cuc-hot5e7838ae39057_96eb8aef68a3aa00523448390b49fbcb.jpg" alt="message user image">
+                          <div class="direct-chat-text"> For what reason would it be advisable for me to think about business content? </div>
+                      </div>
+                      <div class="direct-chat-msg right">
+                          <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-right">me</span> <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span> </div> <img class="direct-chat-img" src=" https://www.itourvn.com/images/easyblog_images/2020/hair_salons_hcmc/hair-salons-in-ho-chi-minh-city-ace.jpg" alt="message user image">
+                          <div class="direct-chat-text"> Thank you for your believe in our supports </div>
+                      </div>
+                      <div class="direct-chat-msg">
+                          <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-left">Nguyễn Thị B</span> <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span> </div> <img class="direct-chat-img" src="https://ephoto360.com/uploads/worigin/2020/03/23/tao-avatar-mac-dinh-facebook-thay-nen-cuc-hot5e7838ae39057_96eb8aef68a3aa00523448390b49fbcb.jpg" alt="message user image">
+                          <div class="direct-chat-text"> For what reason would it be advisable for me to think about business content? </div>
+                      </div>
+                      <div class="direct-chat-msg right">
+                          <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-right">me</span> <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span> </div> <img class="direct-chat-img" src=" https://www.itourvn.com/images/easyblog_images/2020/hair_salons_hcmc/hair-salons-in-ho-chi-minh-city-ace.jpg" alt="message user image">
+                          <div class="direct-chat-text"> I would love to. </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="box-footer">
+                  <form action="#" method="post">
+                      <div class="input-group"> <input type="text" name="message" placeholder="Type Message ..." class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-warning btn-flat">Send</button> </span> </div>
+                  </form>
+              </div>
+          </div>
+          </form>
+        </div>
+      </footer>
     </div>
   </div> 
   <!--   Core JS Files   -->

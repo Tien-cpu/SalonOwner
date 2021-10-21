@@ -32,6 +32,66 @@ Coded by www.creative-tim.com
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <style>
+    .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 500px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 25%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+  </style>
+<script>
+  // When the user clicks on <div>, open the popup
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  </script>
 </head>
 
 <body class="">
@@ -50,7 +110,7 @@ Coded by www.creative-tim.com
           <li>
             <a href="./dashboard.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
+              <p>Lịch Hẹn</p>
             </a>
           </li>
           <li  class="active ">
@@ -162,6 +222,8 @@ Coded by www.creative-tim.com
           </div>
         </div>
       </nav>
+      <div class="col-md-11 col-11" style="margin-top: 200px; margin-left: 20px;" >
+      </div>
       <div class="content">
         <div class="row">
           <div class="col-md-12">
@@ -171,57 +233,128 @@ Coded by www.creative-tim.com
               </div>
               <div class="card-body">
                 <form>
-                  <div class="row">
+                  <div class="row" >
+                    <div class="col-md-2">
+                      <div class="">
+                        <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/246029528_4534048490010294_8839822965402441008_n.png?_nc_cat=109&ccb=1-5&_nc_sid=ae9488&_nc_ohc=xCCEaTREZQMAX_u_KFd&_nc_ht=scontent.fsgn2-4.fna&oh=dea93e62d22b97a00cd281fdc0545976&oe=6197C698" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                        <input type="file" id="img" name="img" accept="image/*" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                      <div class="row">
                     
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label>Tên Dịch vụ</label>
-                        <input type="text" class="form-control"
-                        placeholder="Name" value="">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Tên Dịch vụ</label>
+                            <input type="text" class="form-control"
+                            placeholder="Tên" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Giá gốc</label>
+                            <input type="number" class="form-control" placeholder="0 vnd">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Loại dịch vụ</label>
+                            <select class="form-control" name="cars" id="cars">
+                              <option value="">Nhuộm</option>
+                              <option value="">Cắt Tóc</option>
+                              <option value="">Tạo Kiểu</option>
+                              <option value="">Gội Đâu</option>
+                              <option value="">Cạo râu</option>
+                              <option value="">Uốn Tóc</option>
+                              <option value="">Duỗi Tóc</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label>Giá gốc</label>
-                        <input type="number" class="form-control" placeholder="0 vnd">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Thông tin mô tả</label>
+                            <textarea class="form-control textarea"></textarea>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label>Loại dịch vụ</label>
-                        <select class="form-control" name="cars" id="cars">
-                          <option value="">Nhuộm</option>
-                          <option value="">Cắt Tóc</option>
-                          <option value="">Tạo Kiểu</option>
-                          <option value="">Gội Đâu</option>
-                          <option value="">Cạo râu</option>
-                          <option value="">Uốn Tóc</option>
-                          <option value="">Duỗi Tóc</option>
-                        </select>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <a data-toggle="tab" href="./cpservice.html">Thêm khuyến mãi</a> -->
+                            <div class="popup" onclick="myFunction()">Thêm khuyến mãi
+                              <span class="popuptext" id="myPopup">
+                                <div class="col-md-12">
+                                  <div class="card card-user">
+                                    <div class="card-header">
+                                      <h5 class="card-title">Điền thông tin khuyến mãi</h5>
+                                    </div>
+                                    <div class="card-body">
+                                      <form>
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label>Ngày bắt đầu</label>
+                                              <input type="datetime-local" class="form-control">
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label>Ngày kết thúc</label>
+                                              <input type="datetime-local" class="form-control">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label>khuyến mãi</label>
+                                              <input type="number" class="form-control" placeholder="0%">
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label>Mức khuyến mãi tối đa</label>
+                                              <input type="number" class="form-control" placeholder="0 vnd">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <div class="form-group">
+                                              <label>Thông tin thêm</label>
+                                              <textarea class="form-control textarea"></textarea>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="update ml-auto mr-auto">
+                                            <button type="submit" class="btn btn-primary btn-round">Thêm khuyến mãi</button>
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                            </span>
+                            </div>
+                          </div>
+                          <!-- <button id="myBtn">Thêm khuyến mãi</button> -->
+
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="update ml-auto mr-auto">
+                          <button type="submit" class="btn btn-primary btn-round">Thêm Dịch Vụ</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Thông tin mô tả</label>
-                        <textarea class="form-control textarea"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="img">Chọn ảnh đại diện của dịch vụ:</label>
-                        <input type="file" id="img" name="img" accept="image/*" class="form-control" placeholder="0 vnd">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="update ml-auto mr-auto">
-                      <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
-                    </div>
-                  </div>
+                  
+                </div>
+                </div>
                 </form>
               </div>
             </div>
@@ -229,6 +362,16 @@ Coded by www.creative-tim.com
         </div>
       </div>
     </div>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
   </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>

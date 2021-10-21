@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,7 +90,7 @@ function showCheckboxes() {
           <li>
             <a href="./dashboard.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
+              <p>Lịch Hẹn</p>
             </a>
           </li>
           <li>
@@ -228,9 +214,9 @@ function showCheckboxes() {
               <div class="card-body">
                 <form>
                   <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label>Giờ Huyến mãi</label>
+                        <label>Khung giờ bắt đầu</label>
                         <select class="form-control" name="cars" id="cars">
                           <option value="">8:00 AM</option>
                           <option value="">8:30 AM</option>
@@ -253,70 +239,34 @@ function showCheckboxes() {
                         </select>
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label>Giờ Huyến mãi</label>
-                        <form>
-                          <div class="multipleSelection">
-                              <div class="selectBox" 
-                                  onclick="showCheckboxes()">
-                                  <select class="form-control" >
-                                  </select>
-                                  <div class="overSelect"></div>
-                              </div>
-                    
-                              <div id="checkBoxes">
-                                  <label for="first">
-                                      <input type="checkbox" id="first" />
-                                      thứ 2
-                                  </label>
-                                    
-                                  <label for="second">
-                                      <input type="checkbox" id="second" />
-                                      thứ 3
-                                  </label>
-                                  <label for="third">
-                                      <input type="checkbox" id="third" />
-                                      thứ 4
-                                  </label>
-                                  <label for="fourth">
-                                      <input type="checkbox" id="fourth" />
-                                      thứ 5
-                                  </label>
-                                  <label for="fourth">
-                                    <input type="checkbox" id="fourth" />
-                                    thứ 6
-                                  </label>
-                                  <label for="fourth">
-                                    <input type="checkbox" id="fourth" />
-                                    thứ 7
-                                  </label>
-                                  <label for="fourth">
-                                    <input type="checkbox" id="fourth" />
-                                    chủ nhật
-                                  </label>
-                              </div>
-                          </div>
-                      </form>
-                      <script>
-                        var show = true;
-                  
-                        function showCheckboxes() {
-                            var checkboxes = 
-                                document.getElementById("checkBoxes");
-                  
-                            if (show) {
-                                checkboxes.style.display = "block";
-                                show = false;
-                            } else {
-                                checkboxes.style.display = "none";
-                                show = true;
-                            }
-                        }
-                    </script>
+                        <label>Khung giờ kết thúc</label>
+                        <select class="form-control" name="cars" id="cars">
+                          <!-- <option value="">8:00 AM</option> -->
+                          <option value="">8:30 AM</option>
+                          <option value="">9:00 AM</option>
+                          <option value="">9:30 AM</option>
+                          <option value="">10:30 AM</option>
+                          <option value="">11:00 AM</option>
+                          <option value="">11:300 AM</option>
+                          <option value="">12:00 PM</option>
+                          <option value="">12:30 PM</option>
+                          <option value="">1:00 PM</option>
+                          <option value="">1:30 PM</option>
+                          <option value="">2:00 PM</option>
+                          <option value="">2:30 PM</option>
+                          <option value="">3:00 PM</option>
+                          <option value="">3:30 PM</option>
+                          <option value="">4:00 PM</option>
+                          <option value="">4:30 PM</option>
+                          <option value="">5:00 PM</option>
+                        </select>
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    
+                  </div>
+                    <!-- <div class="col-md-3">
                       <div class="form-group">
                         <label>Ngày bắt đầu</label>
                         <input type="datetime-local" class="form-control">
@@ -327,8 +277,7 @@ function showCheckboxes() {
                         <label>Ngày kết thúc</label>
                         <input type="datetime-local" class="form-control">
                       </div>
-                    </div>
-                  </div>
+                    </div> -->
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -338,8 +287,27 @@ function showCheckboxes() {
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>Mức khuyến mãi tối đa</label>
-                        <input type="number" class="form-control" placeholder="0 vnd">
+                        <label>Ngày khuyến mãi</label>
+                          <div class="form-group">
+                            <ul>
+                              <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                  <input type="text" class="form-control" placeholder="" value="khuyến mãi từ T2 - T7">
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 2</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 3</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 4</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 5</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 6</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 7</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Chủ Nhật</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Tất Cả Các Ngày Trong Tuần</label></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -353,7 +321,7 @@ function showCheckboxes() {
                   </div>
                   <div class="row">
                     <div class="update ml-auto mr-auto">
-                      <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
+                      <button type="submit" class="btn btn-primary btn-round">Thêm khuyến mãi</button>
                     </div>
                   </div>
                 </form>

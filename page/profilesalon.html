@@ -32,6 +32,60 @@ Coded by www.creative-tim.com
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <script type="text/javascript">
+
+    function showCheckboxes() {
+        var checkboxes = document.getElementById("checkBoxes");
+    
+        if (show) {
+            checkboxes.style.display = "block";
+            show = false;
+        } else {
+            checkboxes.style.display = "none";
+            show = true;
+        }
+    }
+        </script>
+        <style>
+          h1 {
+              color: rgb(192, 231, 192);
+          }
+    
+          .multipleSelection {
+              width: 100%;
+              background-color: #ffffff;
+          }
+    
+          .selectBox {
+              position: relative;
+          }
+    
+          .selectBox select {
+              width: 100%;
+              font-weight: bold;
+          }
+    
+          .overSelect {
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+          }
+    
+          #checkBoxes {
+              display: none;
+              border: 1px #8DF5E4 solid;
+          }
+    
+          #checkBoxes label {
+              display: block;
+          }
+    
+          #checkBoxes label:hover {
+              background-color: #8DF5E4 solid;
+          }
+      </style>
 </head>
 
 <body class="">
@@ -50,7 +104,7 @@ Coded by www.creative-tim.com
           <li>
             <a href="./dashboard.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
+              <p>Lịch Hẹn</p>
             </a>
           </li>
           <li>
@@ -190,14 +244,11 @@ Coded by www.creative-tim.com
                 <hr>
                 <div class="button-container">
                   <div class="row">
-                    <div class="col-lg-3 col-md-6 col-6 ml-auto">
-                      <h5>12<br><small>Bài đánh giá</small></h5>
+                    <div class="col-lg-6 col-md-6 col-6 ml-auto">
+                      <h5>Điểm đánh giá <br>4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> / 12 <small>Bài đánh giá</small></h5>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                      <h5>24<br><small>Đặt Lịch Thành Công</small></h5>
-                    </div>
-                    <div class="col-lg-3 mr-auto"><br>
-                      <h5>5 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br></h5>
+                    <div class="col-lg-6 col-md-6 col-6 ml-auto mr-auto">
+                      <h5>Đã Hoàn Thành<br><small>24 Lịch hẹn</small></h5>
                     </div>
                   </div>
                 </div>
@@ -335,6 +386,82 @@ Coded by www.creative-tim.com
                     </div>
                   </div>
                   <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Giờ mở cửa</label>
+                        <select class="form-control" name="cars" id="cars">
+                          <option value="">8:00 AM</option>
+                          <option value="">8:30 AM</option>
+                          <option value="">9:00 AM</option>
+                          <option value="">9:30 AM</option>
+                          <option value="">10:30 AM</option>
+                          <option value="">11:00 AM</option>
+                          <option value="">11:300 AM</option>
+                          <option value="">12:00 PM</option>
+                          <option value="">12:30 PM</option>
+                          <option value="">1:00 PM</option>
+                          <option value="">1:30 PM</option>
+                          <option value="">2:00 PM</option>
+                          <option value="">2:30 PM</option>
+                          <option value="">3:00 PM</option>
+                          <option value="">3:30 PM</option>
+                          <option value="">4:00 PM</option>
+                          <option value="">4:30 PM</option>
+                          <option value="">5:00 PM</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Giờ đóng cửa</label>
+                        <select class="form-control" name="cars" id="cars">
+                          <option value="">8:00 AM</option>
+                          <option value="">8:30 AM</option>
+                          <option value="">9:00 AM</option>
+                          <option value="">9:30 AM</option>
+                          <option value="">10:30 AM</option>
+                          <option value="">11:00 AM</option>
+                          <option value="">11:300 AM</option>
+                          <option value="">12:00 PM</option>
+                          <option value="">12:30 PM</option>
+                          <option value="">1:00 PM</option>
+                          <option value="">1:30 PM</option>
+                          <option value="">2:00 PM</option>
+                          <option value="">2:30 PM</option>
+                          <option value="">3:00 PM</option>
+                          <option value="">3:30 PM</option>
+                          <option value="">4:00 PM</option>
+                          <option value="">4:30 PM</option>
+                          <option value="">5:00 PM</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Ngày làm việc</label>
+                          <div class="form-group">
+                            <ul>
+                              <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                  <input type="text" class="form-control" placeholder="" value="Làm việc từ T2 - T7">
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 2</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 3</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 4</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 5</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 6</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Thứ 7</label></li>
+                                  <li><label class="checkbox"><input type="checkbox">Chủ Nhật</label></li>.
+                                  <li><label class="checkbox"><input type="checkbox">Tất Cả Các Ngày Trong Tuần</label></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Thông tin mô tả</label>
@@ -348,7 +475,6 @@ Coded by www.creative-tim.com
                     </div>
                   </div>
                 </form>
-              </div>
             </div>
           </div>
         </div>
