@@ -26,9 +26,6 @@
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
           <h4 class="heading-section" style="color: #e3b04b !important;">HAIRBOOK</h4> 
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -39,28 +36,16 @@
               <p>Lịch Hẹn</p>
             </a>
           </li>
-          <li  class="active ">
-            <a href="#">
+          <li>
+            <a href="service.html">
               <i class="nc-icon nc-diamond"></i>
               <p>Dịch Vụ</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./coupon.html">
               <i class="fa fa-gift" aria-hidden="true"></i>
               <p>Khuyến mãi</p>
-            </a>
-          </li>
-          <li > 
-            <a href="./finish.html">
-              <i class="nc-icon nc-check-2"></i>
-              <p>Hoàn Thành</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="nc-icon nc-simple-remove"></i>
-              <p>Đã Hủy</p>
             </a>
           </li>
           <li>
@@ -87,9 +72,7 @@
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-      
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
-        
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
@@ -99,7 +82,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Đánh giá dịch vụ</a>
+            <a class="navbar-brand" href="javascript:;">Chỉnh Sửa Khuyến Mãi Cho Dịch Vụ</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -126,19 +109,6 @@
                   </p>
                 </a>
               </li>
-              <!-- <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="nc-icon nc-bell-55"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link btn-rotate" href="javascript:;">
                   <i class="nc-icon nc-settings-gear-65"></i>
@@ -151,93 +121,66 @@
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
-      <div class="col-md-12 col-12 text-right" style="margin-top: 95px;" >
-        <!-- <form action="./createservice.html" class="signin-form"><button type="submit" class="btn btn-primary btn-round" style="margin-top: 95px;">Thêm Dịch vụ mới</button></form> -->
-      </div>
-      <div class="content2">
+      <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card ">
-              
-              <div class="card-header ">
-                <!-- <p class="card-category">24 Hours performance</p> -->
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Điền thông tin khuyến mãi</h5>
               </div>
-              <div class="card-body ">
-                <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar3">
-                    <img src="https://afamilycdn.com/150157425591193600/2021/1/12/8803fde455a30c4527f07539421f217e-1610434334837578849880.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Dịch vụ</label>
+                        <select class="form-control" name="cars" id="cars">
+                          <option value="volvo">Cắt tóc kiểu Hime</option>
+                          <option value="saab">Cắt tóc ngắn nữ</option>
+                          <option value="mercedes">Cắt tóc Layer</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>khuyến mãi</label>
+                        <input type="number" class="form-control" placeholder="0%" value="15">
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-7 col-7"     style="margin-left: 60px;"><br>
-                  Tên: Cắt tóc kiểu Hime <br>
-                  Dịch vụ : Kiểu tóc Hime phong cách Nhật Bản<br>
-                  Giá Gốc : 300.000 vnd/người<br>
-                  Đánh Giá : 4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i> <br>
-                  Khuyến Mãi : 15% <br>
-                  Đã Sử Dụng : 15 người <br>
-                </div>
-              </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        Tên khách hàng
-                      </th>
-                      <th>
-                        nội dung
-                      </th>
-                      <th class="text-right">
-                        Chấm Điểm
-                      </th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          Nguyễn Văn A
-                        </td>
-                        <td>
-                          Salon làm rất đẹp tôi rất hài lòng
-                        </td>
-                        <td class="text-right">
-                          5 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Nguyễn Thị B
-                        </td>
-                        <td>
-                          Salon làm rất đẹp tôi rất hài lòng
-                        </td>
-                        <td class="text-right">
-                          5 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Nguyễn Thị c
-                        </td>
-                        <td>
-                          Salon làm rất đệp nhưng vẫn cần cải thiện thêm
-                        </td>
-                        <td class="text-right">
-                          4.4 <i class="fa fa-star" aria-hidden="true" style="color: #e3b04b;"></i>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Ngày bắt đầu</label>
+                        <input type="datetime-local" class="form-control" value="2021-10-20T00:00">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Ngày kết thúc</label>
+                        <input type="datetime-local" class="form-control" value="2021-10-22T23:59">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Thông tin thêm</label>
+                        <textarea class="form-control textarea"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round">Cập Nhật</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
   <!--   Core JS Files   -->
